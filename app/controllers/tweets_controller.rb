@@ -9,6 +9,13 @@ class TweetsController < ApplicationController
         render(json: { tweet: tweet })
     end
 
+    def update
+        tweet = Tweet.find(params[:id])
+        tweet.update(tweet_params)
+        render(status: 200, json: { tweet: tweet })
+
+    end
+
     def create 
         tweet = Tweet.new(tweet_params) #creating a new tweet using params defined in private
 
