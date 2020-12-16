@@ -9,6 +9,13 @@ class TweetsController < ApplicationController
         render(json: { tweet: tweet })
     end
 
+    def destroy 
+        tweet = Tweet.find(params[:id])
+        tweet.destroy()
+        render(status: 204)
+
+    end
+
     def update
         tweet = Tweet.find(params[:id])
         tweet.update(tweet_params)
