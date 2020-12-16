@@ -1,4 +1,4 @@
-class TweetsController < ApllicationController
+class TweetsController < ApplicationController
 
     def index
         render(status: 200, json: { tweets: Tweet.all })
